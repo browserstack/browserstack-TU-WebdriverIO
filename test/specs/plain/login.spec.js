@@ -24,11 +24,34 @@ describe('StackDemo login', () => {
     expect($('.username')).toHaveText('fav_user');
   })
 
+  it('Login with user for which images doesnt load', () => {
+    $('#signin').click();
+    $('#username input').setValue('image_not_loading_user\n');
+    $('#password input').setValue('testingisfun99\n');
+    $('#login-btn').click();
+    expect($('.username')).toHaveText('image_not_loading_user');
+  })
+
   it('invalid password should see error message', () => {
     $('#signin').click();
     $('#username input').setValue('fav_user\n');
     $('#password input').setValue('wrongpass\n');
     $('#login-btn').click();
     expect($('.api-error')).toHaveText('Invalid Password');
+  })
+
+  it('Login with user having existing orders', () => {
+    $('#signin').click();
+    $('#username input').setValue('existing_orders_user\n');
+    $('#password input').setValue('testingisfun99\n');
+    $('#login-btn').click();
+    expect($('.username')).toHaveText('existing_orders_user');
+
+    $('#orders').click();
+    browser.waitUntil(() => {
+      let pageUrl = browser.getUrl();
+      return pageUrl.indexOf('orders') > -1
+    }, 5000)
+    expect($$('.order')).toHaveLength(5);
   })
 })

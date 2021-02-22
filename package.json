@@ -1,0 +1,31 @@
+{
+  "name": "browserstack-demo-webdriverio-roy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "local": "npx wdio conf/wdio-local.conf.js",
+    "local-pom": "npx wdio conf/wdio-local-pom.conf.js",
+    "local-datadriven": "npx wdio conf/wdio-local-datadriven.conf.js",
+    "local-parallel": "npx wdio conf/wdio-local-parallel.conf.js",
+    "docker": "npx wdio conf/wdio-docker.conf.js",
+    "docker-parallel": "npx wdio conf/wdio-docker-parallel.conf.js",
+    "browserstack": "npx wdio conf/wdio-browserstack.conf.js",
+    "browserstack-parallel": "npx wdio conf/wdio-browserstack-parallel.conf.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@rpii/wdio-html-reporter": "^6.3.1",
+    "@wdio/allure-reporter": "^7.0.1",
+    "@wdio/browserstack-service": "^6.12.0",
+    "@wdio/cli": "^6.12.0",
+    "@wdio/local-runner": "^6.12.0",
+    "@wdio/mocha-framework": "^6.11.0",
+    "@wdio/spec-reporter": "^6.11.0",
+    "@wdio/sync": "^6.11.0",
+    "chromedriver": "^87.0.7",
+    "wdio-chromedriver-service": "^6.0.4"
+  }
+}

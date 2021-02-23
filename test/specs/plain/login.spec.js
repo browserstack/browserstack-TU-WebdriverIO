@@ -48,10 +48,7 @@ describe('StackDemo login', () => {
     expect($('.username')).toHaveText('existing_orders_user');
 
     $('#orders').click();
-    browser.waitUntil(() => {
-      let pageUrl = browser.getUrl();
-      return pageUrl.indexOf('orders') > -1
-    }, 5000)
+    $(".order").waitForDisplayed({ timeout: 5000 });
     expect($$('.order')).toHaveLength(5);
   })
 })

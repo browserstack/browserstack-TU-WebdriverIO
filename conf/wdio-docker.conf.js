@@ -15,7 +15,7 @@ exports.config = {
   logLevel: 'warn',
   coloredLogs: true,
   bail: 0,
-  baseUrl: 'http://host.docker.internal:3000',
+  baseUrl: 'https://bstackdemo.com/',
   waitforTimeout: 10000,
   connectionRetryTimeout: 120000,
   connectionRetryCount: 3,

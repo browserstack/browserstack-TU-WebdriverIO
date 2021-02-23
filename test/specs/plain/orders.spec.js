@@ -34,10 +34,7 @@ describe('Order a product', () => {
 
     $("div.continueButtonContainer button").click();
     $('#orders').click();
-    browser.waitUntil(() => {
-      let pageUrl = browser.getUrl();
-      return pageUrl.indexOf('orders') > -1
-    }, 5000)
+    $(".order").waitForDisplayed({ timeout: 5000 });
     expect($$('.order')).toHaveLength(1);
   })
 })

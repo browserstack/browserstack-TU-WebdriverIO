@@ -9,7 +9,7 @@
 `npm run local-pom`
 
 3. Data-driven test
-`npm run local-data-driven`
+`npm run local-datadriven`
 
 4. Tests run on Browserstack
 `npm run browserstack`

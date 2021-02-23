@@ -30,6 +30,7 @@ describe('StackDemo login', () => {
     $('#password input').setValue('testingisfun99\n');
     $('#login-btn').click();
 
+    $("//p[text() = 'iPhone 12']/../div/button").waitForDisplayed({ timeout: 5000 });
     $("//p[text() = 'iPhone 12']/../div/button").click();
 
     $('#favourites').click();
@@ -38,7 +39,7 @@ describe('StackDemo login', () => {
       let pageUrl = browser.getUrl();
       return pageUrl.indexOf('favourites') > -1
     }, 5000)
-
+    browser.pause(5000)
     expect($$('p.shelf-item__title')).toHaveTextContaining('iPhone 12');
   })
 })

@@ -1,6 +1,6 @@
 let cases = [
   { 'username': 'locked_user', 'password': 'testingisfun99', 'error': 'Your account has been locked.' },
-  { 'username': 'fav_user', 'password': 'wrongpass', 'error': 'Invalid fffPassword' },
+  { 'username': 'fav_user', 'password': 'wrongpass', 'error': 'Invalid Password' },
   { 'username': 'helloworld', 'password': 'testingisfun99', 'error': 'Invalid Username' }
 ]
 

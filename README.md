@@ -18,14 +18,10 @@
 `npm run local-parallel`
 
 6. Tests run on Docker Selenium Grid
-Make sure Docker Selenium Grid is running, by executing `docker-compose up -d` from the `/docker` folder.
-
-   `npm run docker`
+`npm run docker`
 
 7. Tests run parallel on Docker Selenium Grid
-Make sure to scale your Docker Selenium Grid with `docker-compose scale chromenode=3`.
-
-   `npm run docker-parallel`
+`npm run docker-parallel`
 
 8. Tests run parallel on Browserstack
 `npm run browserstack-parallel`

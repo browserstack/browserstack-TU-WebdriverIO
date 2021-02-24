@@ -19,7 +19,7 @@ describe('Order a product', () => {
     $(".float-cart__close-btn").click();
 
     $("//p[text() = 'Galaxy S20']/../div[@class = 'shelf-item__buy-btn']").click();
-    $(".buy-btn").waitForDisplayed({ timeout: 5000 });
+    $(".buy-btn").waitForClickable({ timeout: 5000 });
     $(".buy-btn").click();
 
     $("#firstNameInput").setValue("firstname");

@@ -25,3 +25,6 @@
 
 8. Tests run parallel on Browserstack
 `npm run browserstack-parallel`
+
+## Generate Report
+`npm run generate-report`

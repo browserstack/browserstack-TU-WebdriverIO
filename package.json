@@ -11,7 +11,8 @@
     "docker": "npx wdio conf/wdio-docker.conf.js",
     "docker-parallel": "npx wdio conf/wdio-docker-parallel.conf.js",
     "browserstack": "npx wdio conf/wdio-browserstack.conf.js",
-    "browserstack-parallel": "npx wdio conf/wdio-browserstack-parallel.conf.js"
+    "browserstack-parallel": "npx wdio conf/wdio-browserstack-parallel.conf.js",
+    "generate-report": "./node_modules/allure-commandline/bin/allure generate allure-results --clean && ./node_modules/allure-commandline/bin/allure open"
   },
   "keywords": [],
   "author": "",
@@ -25,6 +26,7 @@
     "@wdio/mocha-framework": "^6.11.0",
     "@wdio/spec-reporter": "^6.11.0",
     "@wdio/sync": "^6.11.0",
+    "allure-commandline": "^2.13.8",
     "chromedriver": "^87.0.7",
     "wdio-chromedriver-service": "^6.0.4",
     "wdio-docker-service": "^3.1.0"

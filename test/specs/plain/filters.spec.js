@@ -1,3 +1,6 @@
+const _ = require('lodash');
+const expectChai = require('chai').expect;
+
 describe('StackDemo filters', () => {
 
   beforeEach('Open StackDemo', () => {
@@ -18,9 +21,9 @@ describe('StackDemo filters', () => {
       }
     );
     all_prices = $$(".val > b").map(function(element){
-      return parseInt(element.getAttribute('innerText'))
+      return parseInt(element.getText())
     });
-    // expect(all_prices)(all_prices.sort(function(a, b){return a - b}));
+    expectChai(_.isEqual(all_prices, _.orderBy(all_prices, [], ['asc']))).to.equal(true, "Lowest to Highest filter is not applied");
   })
 
   it('Apply vendor filter', () => {
@@ -30,6 +33,8 @@ describe('StackDemo filters', () => {
     all_phones = $$(".shelf-item__title").map(function(element){
       return element.getText()
     });
-    console.log(all_phones)
+    expectChai(_.every(all_phones,  function (value) {
+      return (_.includes(value, 'iPhone') || _.includes(value, 'Galaxy'))
+    })).to.equal(true, "Vendor filter is not applied");
   })
 })

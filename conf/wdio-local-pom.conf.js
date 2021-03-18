@@ -3,7 +3,7 @@ var _ = require("lodash");
 
 var overrides = {
   specs: [
-    './test/specs/pom/**/login*.js'
+    './test/specs/pom/*.js'
   ],
 };
 

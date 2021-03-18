@@ -31,8 +31,8 @@ describe('Order a product', () => {
 
     $("#confirmation-message").waitForDisplayed({ timeout: 5000 });
     expect($('#confirmation-message')).toHaveText('Your Order has been successfully placed.');
-
     $("div.continueButtonContainer button").click();
+    
     $('#orders').click();
     $(".order").waitForDisplayed({ timeout: 5000 });
     expect($$('.order')).toHaveLength(1);

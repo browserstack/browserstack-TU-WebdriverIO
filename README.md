@@ -17,7 +17,7 @@
 5. Tests run parallel on local browsers
 `npm run local-parallel`
 
-6. Tests run on Docker Selenium Grid
+6. Tests run on Docker Selenium Grid. Make sure you have docker service running.
 `npm run docker`
 
 7. Tests run parallel on Docker Selenium Grid

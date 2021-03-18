@@ -2,20 +2,20 @@
 `npm install`
 
 # Start different types of tests
-1. Basic test run locally
-`npm run local`
+1. Basic test run on on-premise browser
+`npm run on-prem`
 
 2. Test using Page Object Model
-`npm run local-pom`
+`npm run on-prem-pom`
 
 3. Data-driven test
-`npm run local-datadriven`
+`npm run on-prem-datadriven`
 
 4. Tests run on Browserstack
 `npm run browserstack`
 
-5. Tests run parallel on local browsers
-`npm run local-parallel`
+5. Tests run parallel on on-premise browsers
+`npm run on-prem-parallel`
 
 6. Tests run on Docker Selenium Grid. Make sure you have docker service running.
 `npm run docker`

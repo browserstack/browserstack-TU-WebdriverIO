@@ -20,11 +20,14 @@ var overrides = {
     name: 'BStack-Test',
     build: 'BStack Build webdriverio single'
   }],
-  services: [
-    ['browserstack', {
-      browserstackLocal: false
-    }]
-  ],
+  afterTest: function (test, context, { error, result, duration, passed, retries }) {
+    if(passed) {
+      browser.executeScript('browserstack_executor: {"action": "setSessionStatus", "arguments": {"status":"passed","reason": "Assertions passed"}}');
+    } else {
+      browser.takeScreenshot();
+      browser.executeScript('browserstack_executor: {"action": "setSessionStatus", "arguments": {"status":"failed","reason": "At least 1 assertion failed"}}');
+    }
+  }
 };
 
 exports.config = _.defaultsDeep(overrides, defaults.config);

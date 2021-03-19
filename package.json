@@ -12,6 +12,7 @@
     "docker-parallel": "npx wdio conf/wdio-docker-parallel.conf.js",
     "browserstack": "npx wdio conf/wdio-browserstack.conf.js",
     "browserstack-parallel": "npx wdio conf/wdio-browserstack-parallel.conf.js",
+    "browserstack-local": "npx wdio conf/wdio-browserstack-local.conf.js",
     "generate-report": "./node_modules/allure-commandline/bin/allure generate allure-results --clean && ./node_modules/allure-commandline/bin/allure open"
   },
   "keywords": [],

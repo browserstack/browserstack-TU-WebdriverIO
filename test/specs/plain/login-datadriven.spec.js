@@ -1,9 +1,4 @@
-let cases = [
-  { 'username': 'locked_user', 'password': 'testingisfun99', 'error': 'Your account has been locked.' },
-  { 'username': 'fav_user', 'password': 'wrongpass', 'error': 'Invalid Password' },
-  { 'username': 'helloworld', 'password': 'testingisfun99', 'error': 'Invalid Username' }
-]
-
+var fs = require('fs');
 describe('StackDemo login', () => {
 
   beforeEach('Open StackDemo', () => {
@@ -13,14 +8,22 @@ describe('StackDemo login', () => {
   afterEach('clear sessionstorage', () => {
     browser.execute(() => sessionStorage.clear())
   })
-  cases.forEach(({username, password, error }) => {
-    it(`should return '${ error }' for account with username '${ username }'`, function() {
-      $('#signin').click();
-      $('#username input').setValue(username + '\n');
-      $('#password input').setValue(password + '\n');
-      $('#login-btn').click();
 
-      expect($('.api-error')).toHaveText(error);
-    })
+  it('login should be successful', function() {
+    describe('login should be successful for all data set', function() {
+        testData.forEach(function(val, index) {
+          it(`login sholud be successful for account with username '${ val.split(',')[0] }'`, function() {
+              console.log("login sholud be successful for account with username " + val.split(',')[0])
+              $('#signin').click();
+              $('#username input').setValue(val.split(',')[0] + '\n');
+              $('#password input').setValue(val.split(',')[1] + '\n');
+              $('#login-btn').click();
+        
+              expect($('.username')).toHaveText(val.split(',')[0]);
+
+              $('#logout').click();
+          });
+        });
+    }); 
   });
 })
